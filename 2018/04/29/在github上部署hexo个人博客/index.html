@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="tadecather">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="博客主题设置"/>
+  <meta property="og:title" content="在github 上部署 hexo  个人博客"/>
   <meta property="og:description" content="tadecather&#39;s blog on github!" />
   <meta property="og:site_name" content="Tadecather Blog"/>
   <meta property="og:type" content="article" />
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">博客主题设置</p>
+          <p class="title">在github 上部署 hexo  个人博客</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -108,7 +108,7 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2017-06-10</span>
+            <span class="date">2018-04-29</span>
             <span class="time">23:21:11</span>
           </span>
           
@@ -131,18 +131,17 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>设置一个酷炫的主题，让你自己的博客与众不同！<br><a id="more"></a></p>
-<p>设置 hexo 的主题设置十分方便。<br>前往hexo的主题预览页面 <a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo/themes</a>，然后便可以看到不同<br>的主题的预览。点击预览图片，可以进入到一个使用了该主题的网页。</p>
-<p><img src="https://ooo.0o0.ooo/2017/06/10/593bbb0fb7b2e.png" alt="Hexo|themes"></p>
-<p>点击下面的主题名字进入到该主题的 github 页面。</p>
-<p><img src="https://ooo.0o0.ooo/2017/06/10/593bbb8a618ef.png" alt="area-dual"></p>
-<p>需要 clone 该项目到你自己的博客文件夹下的 themes 目录下。<br>在你的博客文件夹目录下打开命令框，然后执行 git clone 操作。</p>
-<p><code>git clone 你比较喜欢的主题的网址 themes/主题名字</code></p>
-<p>例如这个:<br><code>git clone https://github.com/levblanc/hexo-theme-aero-dual themes/aero-dual</code></p>
-<p>这个是我的博客所用的主题。 <a href="https://github.com/levblanc/hexo-theme-aero-dual" target="_blank" rel="external">area-dual</a><br>一般来说，是需要更新一下的主题的。进入到刚刚 clone 的目录下，执行以下命令:<br><code>git pull</code></p>
-<p>然后更改 [yourblogdirector/config.yml] 文件的 themes 标签为你刚刚保存项目的目录即可。<br>另外根据不同的主题可以设置主题的具体表现形式。</p>
-<p>关于主题的具体设置，可以查看该主题的 github 的 README.md 文件进行设置。</p>
-<p>tadecather</p>
+          <p>在 Github 上使用 hexo 建立个人博客<br><a id="more"></a></p>
+<h3 id="0-前提条件"><a href="#0-前提条件" class="headerlink" title="0.前提条件"></a>0.前提条件</h3><p> a. 安装 node.js 和 node.js 环境<br>可以在cmd中输入 <code>node -v</code> 和 <code>npm -v</code> 查看环境是否配置正确<br>b. 安装 git 软件<br>使用 <code>git --version</code> 查看是否安装<br>c. 创建 github 账号 并建立 username.github.io 的 github 仓库  </p>
+<h3 id="1-基本的创建项目并在本地运行起来"><a href="#1-基本的创建项目并在本地运行起来" class="headerlink" title="1.基本的创建项目并在本地运行起来"></a>1.基本的创建项目并在本地运行起来</h3><p>a. 安装 hexo<br>使用命令 <code>npm install hexo -g</code>安装<br>使用命令 <code>hexo -v</code>检查是否安装成功<br>b. 初始化项目<br>准备一个你本地放置项目的文件夹，然后进入<br>使用命令 <code>hexo init</code> 初始化项目<br>当出现 Start blogging with Hexo! 说明已经初始化项目成功<br>输入 <code>npm install</code> 安装必要的组件<br>c. 本地运行<br>使用命令<code>hexo -s</code> 启动本地服务器<br>使用浏览器打开 提示的网址（一般来说是 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>)<br>如果长时间没有跳转，说明端口可能被占用，这个时候需要更换一个端口开启本地服务器<br>使用命令 <code>hexo server -p 10008</code> 在10008端口上打开服务器  </p>
+<p>当在浏览器成功出现 网页时，说明已经初始化成功了  </p>
+<h3 id="2-项目推送到github-上"><a href="#2-项目推送到github-上" class="headerlink" title="2.项目推送到github 上"></a>2.项目推送到github 上</h3><p>a. 设置 git 与 github 的 密钥和公钥<br>使用命令 <code>git config --global user.name &quot;tadecather&quot; 配置git全局用户名  
+使用命令</code>git config –global user.email “tadecather@gmail.com” 配置git全局邮箱<br>使用命令 <code>ssh-keygen -t rsa -C &quot;tadecather@gmail.com&quot;</code> 生成密匙对。位于<br>C:/User/TAD/.ssh 目录下 其中 id_rsa 为私钥 id_rsa.pub 为公钥<br>使用命令 <code>eval &quot;$(ssh-agent -s)&quot;</code> 添加密匙到 ssh-agent<br>使用命令 <code>ssh-add ~/.ssh/id_rsa</code> 添加生成的 SSH key 到 ssh-agent  </p>
+<p>登录到 github 在 setting 中的 SSH and GPG key 界面的 SSH keys 上点击<br>绿色的 New SSH key 新建密匙对。Title 随便输入，然后 key 复制刚刚生成的 id_rsa.pub<br>文件里面的内容进去。点击确认，输入 github 账户密码，确认密匙配对！  </p>
+<p>b. 修改配置文件 在项目根目录下的 _config.yml 文件<br>修改deploy 中的 repository 为 github 仓库 tadecather.github.io 的项目地址<br>切记使用 SSH 地址，别使用 https 地址<br>c. 安装一个扩展<br>使用命令 <code>npm install hexo-deployer-git --save</code><br>d. 推送及部署<br>使用命令 <code>hexo d -g</code> 生成以及推送文件到 github 上<br>e. 在浏览器中输入 <a href="https://tadecather.github.io" target="_blank" rel="external">https://tadecather.github.io</a>   即可查看最基本的网站了。  </p>
+<h3 id="3-新建博客"><a href="#3-新建博客" class="headerlink" title="3.新建博客"></a>3.新建博客</h3><p>a. 新建文章<br>使用命令 <code>hexo new post &quot;文章名&quot;</code> 将建立source/_post/文章名.md<br>b. 使用 markdown 语法编辑 *.md 文件，即可改变文件内容<br>c. 使用命令 <code>hexo d -g</code>部署项目  </p>
+<p>tadecather 2018.04.29 晚</p>
+<p>参考文档：<br>【1】 <a href="http://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="external">使用github和hexo部署个人博客</a></p>
 
         </div>
       </div>
